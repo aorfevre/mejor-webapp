@@ -1,0 +1,82 @@
+
+<div class="container">
+    <!-- Jumbotron Header -->
+    <header class="jumbotron hero-spacer">
+        <h1>A Warm Welcome!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+        
+    </p>
+</header>
+<div class="row">
+    <div class="col-lg-12">
+        <h3>Create your account now ! </h3>
+    </div>
+    <form name="form" ng-submit="postUser()">
+        <div class="form-group">
+            <label for="emailAdress">Email address</label>
+            <input type="email" name="email" class="form-control"  placeholder="Email" ng-model="myModel.email" required>
+            <span ng-show="form.email.$dirty && form.email.$error.required">Email is required</span>
+        </div>
+        <div class="form-group">
+            <label for="user">User</label>
+            <input type="text" class="form-control"  placeholder="User" ng-model="myModel.user" name ="user" required>
+            <span ng-show="form.user.$dirty && form.user.$error.required">User is required</span>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control"  placeholder="Password" ng-model="myModel.password" name="password" required>
+            <span ng-show="form.password.$dirty && form.password.$error.required">Password is required</span>
+            
+        </div>
+        <div class="form-group">
+            <label for="birth">Birth date</label>
+            <input type="date" name="birthdate" class="form-control"  placeholder="date" ng-model="myModel.birthdate" required>
+            <span ng-show="form.birthdate.$dirty && form.birthdate.$error.required">Birth date is required</span>
+        </div>
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select class="form-control" ng-model="myModel.country">
+                <option ng-repeat="country in countries" ng-value="country" required>{{country.name}}</option>
+                
+            </select>
+            <div class="form-group" ng-if="myModel.country.code == 'OTHER'">
+                <label >Other country name</label>
+                <input type="text" class="form-control"  placeholder="Other country name" ng-model="myModel.other" ng-required="myModel.country.code == 'OTHER'">
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <h3>Available Video Packages </h3>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-6 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Basic</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <label>
+                            <input type="radio" ng-model="myModel.plan" value="basic">
+                            Get it now for just  {{ myModel.country.basic | currency : myModel.currency}} !
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Premium</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <label>
+                            <input type="radio" ng-model="myModel.plan" value="premium">
+                            Get it now for just  {{ myModel.country.premium | currency : myModel.currency}} !
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" >Submit</button>
+    </form>
+</div>
+<!-- /.container

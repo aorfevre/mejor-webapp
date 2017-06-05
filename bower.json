@@ -1,0 +1,14 @@
+{
+  "name": "mejor-webapp",
+  "private": "true",
+  "devDependencies": {},
+  "version": "1.0.00",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-ui-router": "^1.0.3",
+    "AngularJS-Toaster": "^2.1.0",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "angular-animate": "^1.6.4"
+  }
+}
