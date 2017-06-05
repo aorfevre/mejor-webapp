@@ -2,9 +2,9 @@
 
 This is a project performed for GRUPO-MCONTIGO
 
-Tools : 
+Tools used : 
 * framework : Angular 1.X
-* taks runner : Gulp 
+* task runner : Gulp 
 * package control : npm & bower
 
 ## Installation
@@ -16,6 +16,15 @@ This commands :
 - compile dev code on www/ dir
 - start a server on port 8080 (accessible with http://localhost:8080/)
 
+This project a development projet. 
+For production purposes; some scripts may be added for uglification / minification of our source code.
+This process of production has not been implemented
+
+## gulp task runner info :
+I have used Gulp instead of Grunt as I'm very much more familiar with Gulp. But I do know how Grunt works.
+Gulp tasks are splitted into 2 parts : 
+- config : all my config is located into gulpfile.js
+- tasks : our tasks are splitted into different files into directoy tasks/ 
 
 ## Usage
 
